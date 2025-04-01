@@ -10,9 +10,7 @@ To build locally
 * [Node.js](https://nodejs.org/en) and npm installed
 * [Svelte](https://svelte.dev/)
 * [Ollama](https://ollama.com/) and any GPT model
-
-Run with Docker
-* [Docker](https://www.docker.com/)
+* [Python](https://python.org/)
 
 ## Installation
 1. Clone the repository:
@@ -23,16 +21,22 @@ cd <place-holder>
 2. Install dependencies:
 ```shell
 npm install
+pip install -r requirements.txt
 ```
 ## Running the Application
 1. Start Ollama:
 ```shell
-ollama run <model-name>
+ollama run llama3.1
 ```
-2. Star the development server:
+2. Start the development server:
 ```shell
 npm run dev
 ```
+3. Start the flask app for llm-guard:
+```shell
+python llm-guard.py
+```
 ## Usage
+In your web browser navigate to `http://localhost:5173` once you have started the three services needed.
 ### Prompt Injection
 A text box wil present to test out prompts. You will be able to build remediations and test your efforts.
