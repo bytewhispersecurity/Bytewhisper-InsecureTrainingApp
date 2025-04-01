@@ -15,8 +15,8 @@ To build locally
 ## Installation
 1. Clone the repository:
 ```shell
-git clone https://github.com/<place-holder>/<place-holder>.git
-cd <place-holder>
+git clone https://github.com/bytewhispersecurity/ByteWhisper-InsecureApp.git
+cd ByteWhisper-InscureApp
 ```
 2. Install dependencies:
 ```shell
