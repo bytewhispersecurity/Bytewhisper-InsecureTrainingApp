@@ -92,12 +92,19 @@ def listener():
     # Call the Ollama model with the validated input
     response = get_ollama_response(user_prompt, system_prompt_1, risk_score)
 
+    # Check our model's response for sensitive data
     output_scanner = Sensitive(entity_types=["PERSON", "EMAIL"], redact=True)
     sanitized_output, is_valid, risk_score = output_scanner.scan(data['query'], response)
 
-    return jsonify({
-        "response": sanitized_output
-    })
+	# Return our evaluated model's response to our client.
+    if risk_score < 0.5:
+        return jsonify({
+            "response": sanitized_output
+        })
+    else:
+        return jsonify({
+            "response": "Risk score is too high. Please rephrase your question."
+        })
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
