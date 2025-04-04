@@ -24,18 +24,22 @@ npm install
 pip install -r requirements.txt
 ```
 ## Running the Application
+Ensure that you have Ollama running, and pull down the model you wish to use. In our testing we used llama 3.1.
 1. Start Ollama:
 ```shell
-ollama run llama3.1
+ollama pull llama3.1
 ```
+While inside the `ByteWhisper-InsecureApp` directory you will need to run the web server.
 2. Start the development server:
 ```shell
 npm run dev
 ```
+You will need to open up another terminal in the `ByteWhisper-InsecureApp` directory to run the flask app to route our queries through the secruity controls.
 3. Start the flask app for llm-guard:
 ```shell
 python llm-guard.py
 ```
+
 ## Usage
 In your web browser navigate to `http://localhost:5173` once you have started the three services needed.
 ### Prompt Injection
