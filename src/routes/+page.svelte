@@ -1,6 +1,5 @@
 <script>
     import { onMount } from 'svelte';
-    import { Ollama } from 'ollama';
     let query = '';
     let response = '';
     let isLoading = false;
