@@ -1,5 +1,3 @@
-import os
-import re
 import json
 import requests
 import argparse
@@ -35,17 +33,18 @@ offensive_prompts = {
     }
 }
 
-def send_prompt(prompt, interations: int = 1):
+def send_prompt(prompt, interations: int = 1) -> list:
     payload = {
         "query": prompt
     }
     response = requests.post(url, headers=headers, data=json.dumps(payload))
-    
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Error: {response.status_code}")
-        return None
+    result = []
+    for i in range(interations):
+        if response.status_code == 200:
+            result.append(response.json())
+        else:
+            result.append(f"Error: {response.status_code}")
+    return result
     
 def generate_prompts(file_path: str = "prompts.json", tier: int = 1, attack: str = "direct") -> str:
     id = offensive_prompts[attack][str(tier)]
@@ -64,10 +63,17 @@ if __name__ == "__main__":
     parser.add_argument('-f', '--file', type=str, help="File containing prompts to send to the LLM")
     parser.add_argument('-o', '--output', type=str, help="File to save the results")
     args = parser.parse_args()
-
-    if args.prompt is None:
-        prompt = generate_prompts()
-    else:
+    
+    tier = 1 if args.tier is None else str(args.tier)
+    attack = 'direct' if args.attack is None else args.attack
+    file_path = 'prompts.json' if args.file is None else args.file
+    iterations = 1 if args.iterations is None else args.iterations
+    output_file = 'results.json' if args.output is None else args.output
+    
+    if args.prompt:
         prompt = args.prompt
+    else:
+        prompt = generate_prompts(file_path, tier, attack)
 
-    send_prompt(prompt, args.iterations)
+    result = send_prompt(prompt, iterations)
+    print(result)

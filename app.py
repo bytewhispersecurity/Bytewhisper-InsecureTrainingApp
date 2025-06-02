@@ -1,7 +1,5 @@
 # functions defined by guard.py
 from guard import input_scanner, output_scanner, get_ollama_response
-# functions defined by attack.py
-# from attack import *
 # functions defined by monitor.py
 from monitoring import log_chat
 
