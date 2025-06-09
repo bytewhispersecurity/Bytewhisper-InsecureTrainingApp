@@ -1,4 +1,5 @@
 import os
+import logging
 from datetime import datetime
 
 # This function will log the chat messages to a file
@@ -18,3 +19,4 @@ def log_chat(user_message: str, system_message: str, output_message: str, risk_s
         f.write(f"Prompt Output: {output_message}\n")
         f.write(f"Risk Score: {risk_score}\n")
         f.write("\n")
+        

@@ -32,3 +32,9 @@ vite.config.ts.timestamp-*
 # Juptyer Notebook
 notebook.ipynb
 
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python
+/__pycache__
+__pycache__/*.pyc

@@ -1,7 +1,6 @@
 <script>
     import { onMount } from 'svelte';
     import { Router, Route } from 'svelte-routing';
-    import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
     import InsecureAppHeader from './libs/components/Header.svelte';
     import InsecureAppFooter from './libs/components/Footer.svelte';
     import Logs from './routes/Logs.svelte';
