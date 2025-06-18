@@ -1,5 +1,5 @@
 <script>
-    import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Button } from 'flowbite-svelte';
+    import { Navbar, NavBrand, NavHamburger, Button } from 'flowbite-svelte';
 </script>
 
 <header class="start-0 top-0 z-20 w-full border-b border-gray-200 bg-header shadow-sm flex items-center justify-between">

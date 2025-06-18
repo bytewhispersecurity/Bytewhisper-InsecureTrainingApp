@@ -1,7 +1,7 @@
 # functions defined by guard.py
 from guard import input_scanner, output_scanner, get_ollama_response
 # functions defined by monitor.py
-from monitoring import log_chat
+from monitoring import log_chat, parse_logs
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -70,8 +70,10 @@ def scan():
         log_chat(data['query'], system_prompt["content"], "Prompt injection detected.", risk_score)
         return jsonify({"error": "Prompt injection detected.", "risk_score": risk_score})
 
-# @app.route('/monitor', methods=['POST'])
-# def monitor():
+@app.route('/logs', methods=['GET'])
+def get_logs():
+    logs = parse_logs()
+    return jsonify(logs)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)

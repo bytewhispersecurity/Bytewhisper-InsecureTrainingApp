@@ -1,5 +1,5 @@
-import os
-import logging
+import os, re
+import json
 from datetime import datetime
 
 # This function will log the chat messages to a file
@@ -12,11 +12,36 @@ def log_chat(user_message: str, system_message: str, output_message: str, risk_s
     log_file = f'logs/chat_log_{datetime.now().strftime("%Y-%m-%d")}.log'
 
     # Log the messages to the file
-    with open(log_file, 'a') as f:
-        f.write(f"Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"System Prompt: {system_message}\n")
-        f.write(f"User Prompt: {user_message}\n")
-        f.write(f"Prompt Output: {output_message}\n")
-        f.write(f"Risk Score: {risk_score}\n")
-        f.write("\n")
+    with open(log_file, 'r') as f:
+        log_content = json.load(f)
+        log_message = {
+            "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            "system_prompt": system_message,
+            "user_prompt": user_message,
+            "output_message": output_message,
+            "risk_score": risk_score
+        }
+        log_content.append(log_message)
+    
+    with open(log_file, 'w') as f:
+        json.dump(log_content, f, indent=4)
         
+        
+# This function will return log contents to web UI
+def parse_logs():
+    log_file = f'logs/chat_log_{datetime.now().strftime("%Y-%m-%d")}.log'
+
+    log_contents = []
+
+    with open(log_file, 'r') as f:
+        log = json.load(f)
+        for entry in log:
+            log_contents.append({
+                "timestamp": entry["timestamp"],
+                "system_prompt": entry["system_prompt"],
+                "user_prompt": entry["user_prompt"],
+                "output_message": entry["output_message"],
+                "risk_score": entry["risk_score"]
+            })
+    
+    return log_contents
