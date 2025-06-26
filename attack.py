@@ -33,17 +33,17 @@ offensive_prompts = {
     }
 }
 
-def send_prompt(prompt, interations: int = 1) -> list:
+# TODO - Add iterations to the prompt sending function
+def send_prompt(prompt) -> list:
     payload = {
         "query": prompt
     }
     response = requests.post(url, headers=headers, data=json.dumps(payload))
     result = []
-    for i in range(interations):
-        if response.status_code == 200:
-            result.append(response.json())
-        else:
-            result.append(f"Error: {response.status_code}")
+    if response.status_code == 200:
+        result.append(response.json())
+    else:
+        result.append(f"Error: {response.status_code}")
     return result
     
 def generate_prompts(file_path: str = "prompts.json", tier: int = 1, attack: str = "direct") -> str:
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--prompt', type=str, help="Custom prompt to send to the LLM")
     parser.add_argument('-t', '--tier', type=int, choices=[1, 2, 3], help="Tier of the attack (1: Basic, 2: Intermediate, 3: Advanced)")
     parser.add_argument('-a', '--attack', type=str, help="Type of prompt attack to simulate (options: direct, indirect, contextual, role-playing, technical)")
-    parser.add_argument('-i', '--iterations', type=int, default=1, help="Number of iterations to run the attack prompt")
+    # parser.add_argument('-i', '--iterations', type=int, default=1, help="Number of iterations to run the attack prompt")
     parser.add_argument('-f', '--file', type=str, help="File containing prompts to send to the LLM")
     parser.add_argument('-o', '--output', type=str, help="File to save the results")
     args = parser.parse_args()
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     tier = 1 if args.tier is None else str(args.tier)
     attack = 'direct' if args.attack is None else args.attack
     file_path = 'prompts.json' if args.file is None else args.file
-    iterations = 1 if args.iterations is None else args.iterations
+    # iterations = 1 if args.iterations is None else args.iterations
     output_file = 'results.json' if args.output is None else args.output
     
     if args.prompt:
