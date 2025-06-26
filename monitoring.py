@@ -11,6 +11,11 @@ def log_chat(user_message: str, system_message: str, output_message: str, risk_s
     # Create a log file with the current date
     log_file = f'logs/chat_log_{datetime.now().strftime("%Y-%m-%d")}.log'
 
+    # Initialize the log file if it doesn't exist
+    if not os.path.exists(log_file):
+        with open(log_file, 'w') as f:
+            json.dump([], f, indent=4)
+
     # Log the messages to the file
     with open(log_file, 'r') as f:
         log_content = json.load(f)
