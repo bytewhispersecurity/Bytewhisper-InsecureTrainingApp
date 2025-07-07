@@ -25,3 +25,17 @@ vite.config.ts.timestamp-*
 
 # SQLite
 *.db
+
+# Logs
+/logs
+
+# Juptyer Notebook
+notebook.ipynb
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python
+/__pycache__
+__pycache__/*.pyc
+__pycache__/monitoring.cpython-311.pyc
