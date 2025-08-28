@@ -6,6 +6,5 @@
   <FooterCopyright href="https://bytewhispersecurity.com/" by="Bytewhisper Security™" />
   <FooterLinkGroup class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400">
     <FooterLink href="mailto://insecure-app@bytewhispersecurity.com">Support</FooterLink>
-    <FooterLink href="/legal">Legal stuff</FooterLink>
   </FooterLinkGroup>
 </Footer>

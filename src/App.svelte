@@ -30,7 +30,7 @@
         isLoading = true;
 
         try {
-            const res = await fetch('http://0.0.0.0:5001/scan', {
+            const res = await fetch('http://localhost:5001/scan', {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -61,15 +61,14 @@
         };
     });
 </script>
-
-<div class="min-h-screen justify-between al-center">
+<div class="main-background min-h-screen justify-between al-center">
     <InsecureAppHeader />
     <Router>
         <Route path="/">
             <main>
                 <h1>Query your local AI</h1>
                 <div>
-                    <input type="text" bind:value={query} placeholder="Enter your query" maxlength="200" on:keydown={(e) => e.key === 'Enter' && sendRequest()} />
+                    <input class="input-box" type="text" bind:value={query} placeholder="Enter your query" maxlength="200" on:keydown={(e) => e.key === 'Enter' && sendRequest()} />
                     <button on:click={sendRequest} disabled={isLoading}>
                         {isLoading ? 'Loading...' : 'Submit'}
                     </button>
