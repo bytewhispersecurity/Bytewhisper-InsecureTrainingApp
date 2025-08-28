@@ -48,8 +48,8 @@ def select_system_prompt(difficulty: int):
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-@app.route('/scan', methods=['POST'])
-def scan():
+@app.route('/chat', methods=['POST'])
+def chat():
     data = request.get_json()
     # TODO - Add difficulty level to the request
     system_prompt = select_system_prompt(1)

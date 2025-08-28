@@ -30,7 +30,7 @@
         isLoading = true;
 
         try {
-            const res = await fetch('http://localhost:5001/scan', {
+            const res = await fetch('http://localhost:5001/chat', {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
