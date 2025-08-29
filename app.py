@@ -52,7 +52,7 @@ CORS(app)  # Enable CORS for all routes
 def chat():
     data = request.get_json()
     # TODO - Add difficulty level to the request
-    system_prompt = select_system_prompt(1)
+    system_prompt = select_system_prompt(int(data['level']))
 
     # Check for prompt injection in the user message
     user_prompt, risk_score = input_scanner(data['query'])

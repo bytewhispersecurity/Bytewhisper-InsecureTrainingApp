@@ -240,8 +240,56 @@ button:focus-visible {
 
 .input-box {
   color: black;
+  width: 100%
 }
 
 .main-background{
   background-color: var(--named-dark_green);
+}
+
+.whitetext {
+  color: white;
+}
+
+.blacktext {
+  color: black;
+}
+
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row {
+    width: auto;
+}
+.flex-item {
+    padding: 5px;
+    width: 35%;
+    height: 35%;
+    margin: 10px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+}
+
+.table_header {
+  color: white;
+  background-color: var(--named-inky_green);
+  border-radius: var(--radius-lg);
+}
+
+.table-class{
+  max-width: 900px;
+  width: 800px;
+}
+
+.response{
+  max-width: 600px;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
 }
