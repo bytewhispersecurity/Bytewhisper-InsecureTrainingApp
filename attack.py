@@ -3,7 +3,7 @@ import time
 import requests
 import argparse
 
-url = "http://localhost:5001/scan"
+url = "http://localhost:5001/chat"
 headers = {"Content-Type": "application/json"}
 
 offensive_prompts = {
