@@ -15,7 +15,6 @@
         user_prompt: string;
         system_prompt: string;
         output_message: string;
-        risk_score: number;
     };
 
     let logs: LogEntry[] = [];
@@ -95,10 +94,6 @@
                                             bind:value={log.output_message}
                                             class="w-full blacktext"
                                         />
-                                    </td></tr>
-                                    <tr><td>
-                                        <strong>Risk Score:</strong>
-                                        {log.risk_score}
                                     </td></tr>
                                     </tbody>
                                     </table>

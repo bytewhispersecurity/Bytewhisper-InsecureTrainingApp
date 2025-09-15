@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 # This function will log the chat messages to a file
-def log_chat(user_message: str, system_message: str, output_message: str, risk_score: int):
+def log_chat(user_message: str, system_message: str, output_message: str):
     # Create a directory for logs if it doesn't exist
     if not os.path.exists('logs'):
         os.makedirs('logs')
@@ -24,7 +24,6 @@ def log_chat(user_message: str, system_message: str, output_message: str, risk_s
             "system_prompt": system_message,
             "user_prompt": user_message,
             "output_message": output_message,
-            "risk_score": risk_score
         }
         log_content.append(log_message)
     
@@ -46,7 +45,6 @@ def parse_logs():
                 "system_prompt": entry["system_prompt"],
                 "user_prompt": entry["user_prompt"],
                 "output_message": entry["output_message"],
-                "risk_score": entry["risk_score"]
             })
     
     return log_contents
