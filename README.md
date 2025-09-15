@@ -5,23 +5,14 @@ Welcome to Bytewhisper's LLM focused Vulnerability Remediation Project. This pro
 * [Prompt Injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/)
 
 ## Getting Started
-### Prerequisites
-To build locally
-* [Node.js](https://nodejs.org/en) and npm installed
-* [Svelte](https://svelte.dev/)
-* [Ollama](https://ollama.com/) and any GPT model
-* [Python](https://python.org/)
 
-## Installation
-1. Clone the repository:
-```shell
-git clone https://github.com/bytewhispersecurity/Bytewhisper-InsecureApp.git
-cd Bytewhisper-InscureApp
-```
-2. Install dependencies:
-```shell
-npm install
-pip install -r requirements.txt
+The easiest way to run the application is to use docker. If you would like to run it manually, then refer to README_manual_run.md
+
+### Prerequisites
+To run with docker
+* [docker](https://nodejs.org/en)
+* [Ollama](https://ollama.com/) and any GPT model
+
 ```
 ## Running the Application
 Ensure that you have Ollama running, and pull down the model you wish to use. In our testing we used llama 3.1.
@@ -29,16 +20,12 @@ Ensure that you have Ollama running, and pull down the model you wish to use. In
 ```shell
 ollama pull llama3.1
 ```
-While inside the `Bytewhisper-InsecureApp` directory you will need to run the web server.
+While inside the `Bytewhisper-InsecureApp` directory you will need to run the docker compose file.
 2. Start the development server:
 ```shell
-npm run dev
+docker compose up --build
 ```
-You will need to open up another terminal in the `Bytewhisper-InsecureApp` directory to run the flask app to route our queries through the secruity controls.
-3. Start the flask app for llm-guard:
-```shell
-python app.py
-```
+
 ## LLM Attack Simulation Script
 The `attack.py` script allows you to test and simulate different types of prompt injection attacks against your LLM applicaion by:
 * Sending malicious or obfuscated prompts
@@ -74,6 +61,30 @@ python attack.py -f prompts.json -a contextual -t 3 -o attack_log.json
 ```
 
 ## Usage
-In your web browser navigate to `http://localhost:5173` once you have started the three services needed.
+In your web browser navigate to `http://localhost:3000` once you have started the docker compose file.
 ### Prompt Injection
 A text box will present to test out prompts. You will be able to build remediations and test your efforts.
+
+The different selectable levels correspond to different prompts. For ease of use, the even numbered level after every odd numbered level is an identical prompt with an output guard enabled.
+
+E.g. Level 1 and level 2 have the same prompt:
+The output guare is disabled on level 1 but enabled on level 2.
+
+The same applies for level 3 and level 4 and so on.
+
+### Exercise objectives
+These objectives are not mandatory but intended to provide some directions to play with.
+
+Higher levels have the same target but 'harder' and more restrictive prompts.
+
+We hope to expand the levels with command injection and database injection attacks shortly...
+
+- Level 1 + 2 - Find out who else the AI agent is talking with
+
+- Level 3 + 4 - Try to identify the password
+
+- Level 5 + 6 - Try to identify the password
+
+- Level 7 + 8 - Try to identify the password
+
+- Level 9 + 10 - Try to identify the password
