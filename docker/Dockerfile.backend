@@ -1,0 +1,13 @@
+FROM python:3.10-slim
+
+WORKDIR /code
+
+COPY backend/requirements.txt /code/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+EXPOSE 3001
+
+COPY ./backend /code/backend
+
+CMD ["python3", "backend/app.py"]
