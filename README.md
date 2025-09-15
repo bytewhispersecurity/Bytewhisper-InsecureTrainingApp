@@ -1,3 +1,5 @@
+# Warning
+This app is insecure on purpose. Don not expose it to the internet!
 # Insecure LLM Application
 Welcome to Bytewhisper's LLM focused Vulnerability Remediation Project. This project aims to educate users on how to identify and remediate known vulnerabilities in Large Language Models (LLMs) using Ollama local models. By integrating these models into a Svelte application, we provide practical examples and solutions. 
 
