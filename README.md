@@ -21,7 +21,7 @@ Ensure that you have Ollama running, and pull down the model you wish to use. In
 ollama pull llama3.1
 ```
 While inside the `Bytewhisper-InsecureApp` directory you will need to run the docker compose file.
-2. Start the development server:
+
 ```shell
 docker compose up --build
 ```
