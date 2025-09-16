@@ -17,18 +17,21 @@ To run with docker
 
 ## Running the Application
 Ensure that you have Ollama running, and pull down the model you wish to use. In our testing we used llama 3.1.
-1. Start Ollama:
+
+#### Start Ollama:
 ```shell
 ollama pull llama3.1
 ```
 While inside the `Bytewhisper-InsecureApp` directory you will need to run the docker compose file.
-
+#### Start Docker App:
 ```shell
 docker compose up --build
 ```
 
 ## Usage
-In your web browser navigate to `http://localhost:3000` once you have started the docker compose file.
+Now that the application is running navigate to your web browser and go to the this URL: `http://localhost:3000`. From here try to ask your local model some simple questions such as: 
+* "How many apples are consumed in the USA during a calendar year?" which will give you some interesting information. 
+* "Are you running locally?" and you will see the limitations of the model as it is 100% positive it is not.
 
 ## LLM Attack Simulation Script
 The `attack.py` script allows you to test and simulate different types of prompt injection attacks against your LLM applicaion by:
