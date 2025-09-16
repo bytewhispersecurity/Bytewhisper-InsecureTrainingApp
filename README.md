@@ -15,7 +15,6 @@ To run with docker
 * [docker](https://nodejs.org/en)
 * [Ollama](https://ollama.com/) and any GPT model
 
-```
 ## Running the Application
 Ensure that you have Ollama running, and pull down the model you wish to use. In our testing we used llama 3.1.
 1. Start Ollama:
