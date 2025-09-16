@@ -27,6 +27,9 @@ While inside the `Bytewhisper-InsecureApp` directory you will need to run the do
 docker compose up --build
 ```
 
+## Usage
+In your web browser navigate to `http://localhost:3000` once you have started the docker compose file.
+
 ## LLM Attack Simulation Script
 The `attack.py` script allows you to test and simulate different types of prompt injection attacks against your LLM applicaion by:
 * Sending malicious or obfuscated prompts
@@ -61,8 +64,6 @@ Load prompts from a custom JSON file and store output to attack_log.json:
 python attack.py -f prompts.json -a contextual -t 3 -o attack_log.json
 ```
 
-## Usage
-In your web browser navigate to `http://localhost:3000` once you have started the docker compose file.
 ### Prompt Injection
 A text box will present to test out prompts. You will be able to build remediations and test your efforts.
 
