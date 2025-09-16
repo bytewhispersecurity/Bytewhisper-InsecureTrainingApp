@@ -70,26 +70,9 @@ python attack.py -f prompts.json -a contextual -t 3 -o attack_log.json
 ### Prompt Injection
 A text box will present to test out prompts. You will be able to build remediations and test your efforts.
 
-The different selectable levels correspond to different prompts. For ease of use, the even numbered level after every odd numbered level is an identical prompt with an output guard enabled.
-
-E.g. Level 1 and level 2 have the same prompt:
-The output guare is disabled on level 1 but enabled on level 2.
-
-The same applies for level 3 and level 4 and so on.
-
 ### Exercise objectives
 These objectives are not mandatory but intended to provide some directions to play with.
 
 Higher levels have the same target but 'harder' and more restrictive prompts.
 
-We hope to expand the levels with command injection and database injection attacks shortly...
 
-- Level 1 + 2 - Find out who else the AI agent is talking with
-
-- Level 3 + 4 - Try to identify the password
-
-- Level 5 + 6 - Try to identify the password
-
-- Level 7 + 8 - Try to identify the password
-
-- Level 9 + 10 - Try to identify the password
