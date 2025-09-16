@@ -12,7 +12,7 @@ The easiest way to run the application is to use docker. If you would like to ru
 
 ### Prerequisites
 To run with docker
-* [docker](https://nodejs.org/en)
+* [docker](https://www.docker.com/)
 * [Ollama](https://ollama.com/) and any GPT model
 
 ## Running the Application
