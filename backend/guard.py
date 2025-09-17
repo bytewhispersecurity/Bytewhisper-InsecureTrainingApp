@@ -70,7 +70,7 @@ def replacer(match):
     return match.group(0) # Return the original match if no groups are found
 
 # Send the sanitized input to the Ollama model
-def get_ollama_response(user_input: str, system_input: str):
+def get_ollama_response(user_input: str, system_input: dict[str, str]):
     if validateInput(user_input):
         sanitized_prompt = sanitizeInput(user_input)
         # encoded_prompt = encodeInput(sanitized_prompt)

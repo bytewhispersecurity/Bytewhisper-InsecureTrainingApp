@@ -1,6 +1,6 @@
 {
-	"name": "bytewhisper-insecureapp",
-	"private": false,
+	"name": "bytewhisper-insecuretrainingapp",
+	"private": true,
 	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
@@ -24,6 +24,6 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/bytewhispersecurity/Bytewhisper-InsecureApp"
+		"url": "https://github.com/bytewhispersecurity/Bytewhisper-InsecureTrainingApp.git"
 	}
 }

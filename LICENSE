@@ -1,0 +1,29 @@
+MIT License
+
+Copyright (c) 2025 ByteWhisper Security
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+SECURITY DISCLAIMER:
+This software is intentionally vulnerable and is designed for educational purposes only. It contains known security vulnerabilities, and all data is clearly readable and unencrypted.  It should never be used in a production environment or exposed to the public internet. The creators and contributors are not responsible for any damages or misuse resulting from the deployment of this software outside of controlled, educational environments.
+By using this software, you acknowledge that:
+1. This is a training tool containing intentional security vulnerabilities
+2. It should only be run in isolated, controlled environments
+3. It is not suitable for production use or exposure to the public internet
+4. You assume all risks associated with its use
